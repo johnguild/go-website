@@ -5,7 +5,7 @@ This Project provides a starting point for building a fullstack website using [G
 
 Features:
 
-1. Public and Private Pages/Contentw with Authentication
+1. Public and Private Pages/Content with Authentication
     - Pages for guests like homepage, loginpage etc.. should be available to all
     - Authenticated pages/content will either redirect or return 404 not found
 
@@ -16,13 +16,13 @@ Features:
 3. Middlewares Support
     - centralized route definition in routes.go 
     - Adding middlewares should be easy.
-
+    ```
     mux.HandleFunc("/", handlers.IndexHandler)
     mux.HandleFunc("/dashboard", chainHandlers(
         middlewares.AuthenticatedContent,
         handlers.DashboardHandler,
     ))
-
+    ```
 4. Minimal Frontend Dependencies.
     - Focuses on server-side rendering with HTML responses (no JavaScript or JSON usage in this base template)
 
@@ -38,6 +38,6 @@ Getting Started:
 
 1. Download source code.
 2. Open and go to source root directory.
-3. Run go mod tidy
-4. Start server with go run ./cmd/website/
+3. Run ```go mod tidy```
+4. Start server with ```go run ./cmd/website/```
 
